@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "G+z3ZfXhBJ7hrJHVOsMU+9HGbAyafvuBZohmMhrCsdc=",
+  "Hash": "liodJY6o8E2q1IBGyoBHppAWcOD8sxCvN1swL+i9Y3Q=",
   "Source": "EmployeeManagement",
   "BasePath": "_content/EmployeeManagement",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "EmployeeManagement\\wwwroot",
+      "Source": "EmployeeManagement",
+      "ContentRoot": "C:\\Projects\\EmployeeManagement\\EmployeeManagement\\wwwroot\\",
+      "BasePath": "_content/EmployeeManagement",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Projects\\EmployeeManagement\\EmployeeManagement\\wwwroot\\default.html",
+      "SourceId": "EmployeeManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\EmployeeManagement\\EmployeeManagement\\wwwroot\\",
+      "BasePath": "_content/EmployeeManagement",
+      "RelativePath": "default.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\default.html"
+    },
+    {
+      "Identity": "C:\\Projects\\EmployeeManagement\\EmployeeManagement\\wwwroot\\foo.html",
+      "SourceId": "EmployeeManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\EmployeeManagement\\EmployeeManagement\\wwwroot\\",
+      "BasePath": "_content/EmployeeManagement",
+      "RelativePath": "foo.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\foo.html"
+    }
+  ]
 }

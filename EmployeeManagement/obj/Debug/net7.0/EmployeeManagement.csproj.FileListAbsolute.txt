@@ -23,3 +23,4 @@ C:\Projects\EmployeeManagement\EmployeeManagement\obj\Debug\net7.0\refint\Employ
 C:\Projects\EmployeeManagement\EmployeeManagement\obj\Debug\net7.0\EmployeeManagement.pdb
 C:\Projects\EmployeeManagement\EmployeeManagement\obj\Debug\net7.0\EmployeeManagement.genruntimeconfig.cache
 C:\Projects\EmployeeManagement\EmployeeManagement\obj\Debug\net7.0\ref\EmployeeManagement.dll
+C:\Projects\EmployeeManagement\EmployeeManagement\bin\Debug\net7.0\EmployeeManagement.staticwebassets.runtime.json
