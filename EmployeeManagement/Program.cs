@@ -4,6 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 var process = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
 var env = app.Environment;
+var services = builder.Services;
+services.AddMvc((options) => options.EnableEndpointRouting = false);
 
 //creating the configuration settings value present in appsettings.json
 IConfiguration config = app.Configuration;
@@ -27,6 +29,10 @@ fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
 fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
 app.UseFileServer(fileServerOptions); // to reder a default html file
 app.UseStaticFiles();
+
+
+//using MVC
+app.UseMvcWithDefaultRoute();
 
 //reading the config settings value in appsettings.json
 //app.MapGet("/", () => config["MyKey"]);
