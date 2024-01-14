@@ -1,11 +1,12 @@
 using System.Runtime.CompilerServices;
 
 var builder = WebApplication.CreateBuilder(args);
+//the addmvc services has to be called before the application build
+//variable is created, otherwise it throws an error
+builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
 var app = builder.Build();
 var process = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
 var env = app.Environment;
-var services = builder.Services;
-services.AddMvc((options) => options.EnableEndpointRouting = false);
 
 //creating the configuration settings value present in appsettings.json
 IConfiguration config = app.Configuration;
@@ -38,7 +39,7 @@ app.UseMvcWithDefaultRoute();
 //app.MapGet("/", () => config["MyKey"]);
 
 //reading the hosting environment from the lauchsettings.json
-app.MapGet("/", () => "Hosting Environment: " + env.EnvironmentName);
+//app.MapGet("/", () => "Hosting Environment: " + env.EnvironmentName);
 
 
 //reading the process name present in launchsettings.json
@@ -46,6 +47,6 @@ app.MapGet("/", () => "Hosting Environment: " + env.EnvironmentName);
 
 
 
-//app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => "Hello World!");
 
 app.Run();
