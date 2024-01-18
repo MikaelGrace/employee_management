@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EmployeeManagement.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagement.Controllers
 {
@@ -11,11 +12,24 @@ namespace EmployeeManagement.Controllers
         {
             return "Hello from MVC";
         }*/
+        
 
         //returning JSON data
-        public JsonResult Index()
+/*        public JsonResult Index()
         {
             return Json(new { id=1, name="Jerry"});
+        }*/
+
+        private IEmployeeRepository _employeeRepository;
+        public HomeController(IEmployeeRepository employeeRepository)
+        {
+            _employeeRepository = employeeRepository;
+
+        }
+
+        public string Index()
+        {
+            return _employeeRepository.GetEmployee(1).Name;
         }
     }
 }

@@ -1,9 +1,14 @@
+using EmployeeManagement.Models;
 using System.Runtime.CompilerServices;
 
 var builder = WebApplication.CreateBuilder(args);
 //the addmvc services has to be called before the application build
 //variable is created, otherwise it throws an error
 builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
+//this is to register the implementation of the IemployeeRepository
+//This is to ensure that the request from the homeController is duly served
+//currently the only implementation is mockEployeeRepository
+builder.Services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
 var app = builder.Build();
 var process = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
 var env = app.Environment;
