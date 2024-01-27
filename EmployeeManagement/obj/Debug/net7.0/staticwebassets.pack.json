@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\foo.html"
     },
     {
+      "Id": "C:\\Projects\\EmployeeManagement\\EmployeeManagement\\wwwroot\\js\\CustomScript.js",
+      "PackagePath": "staticwebassets\\js\\CustomScript.js"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.EmployeeManagement.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

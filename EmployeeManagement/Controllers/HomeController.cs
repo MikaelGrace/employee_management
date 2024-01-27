@@ -20,16 +20,43 @@ namespace EmployeeManagement.Controllers
             return Json(new { id=1, name="Jerry"});
         }*/
 
-        private IEmployeeRepository _employeeRepository;
+        private readonly IEmployeeRepository _employeeRepository;
         public HomeController(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
 
         }
 
-        public string Index()
+        public ViewResult Index()
         {
-            return _employeeRepository.GetEmployee(1).Name;
+            var model = _employeeRepository.GetAllEmployee();
+            return View(model);
+        }
+
+        //using JSON result
+        /*public JsonResult Detail()
+        {
+            Employee model = _employeeRepository.GetEmployee(1);
+            return Json(model);
+        }*/
+
+        //uisng Object result
+        /*public ObjectResult Detail()
+        {
+            Employee model = _employeeRepository.GetEmployee(1);
+            return new ObjectResult(model);
+        }*/
+
+        //using view
+        public ViewResult Details(int id)
+        {
+            Employee model = _employeeRepository.GetEmployee(id);
+            //with viewdata, we use string keys, with view bag, we use dynamic properties
+            //ViewData["Employee"] = model;
+            //ViewData["Page Title"] = "Employee Details";
+            //ViewBag.Employee = model;
+            ViewBag.PageTitle = "Employee Details";
+            return View(model);
         }
     }
 }

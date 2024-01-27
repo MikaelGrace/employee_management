@@ -1,0 +1,53 @@
+﻿@*to create a strongly typed view, we use the @model object*@
+
+@*we can now use only the model name as the namespace has been specified in viewimports*@
+@model Employee;
+
+
+@{
+    //Layout = "~/Views/Shared/_Layout.cshtml"; this line is no longer required due to the viewstart file
+    ViewBag.Title = "Employee Details";
+}
+
+
+@*when returning string value from viewdata, we do not have to explicitly 
+    cast the output to string. However for returning any other data type,
+    there has to be explicit casting
+*@
+
+@*using viewdata has the limitation of creating a loosly typed view
+    such that the view does not know the type of the keys that are being passed
+    at compile time. It only knows that at run time. There's also no intellicence
+    so we can misspell anything and not notice until runtime
+*@
+
+@*viewdata is dynamically resolved at runtime so it does not provide compile
+    time type checking, thus there is no intellicense
+*@
+@*<h3>@ViewData["Page Title"]</h3>*@
+<h3>@ViewBag.PageTitle</h3>
+
+<!--with viewbag we do not have to create a variable for the employee object-->
+@*     @{
+    var employee = ViewData["Employee"] as EmployeeManagement.Models.Employee;
+} *@
+
+<div>
+    @*Name: @ViewBag.Employee.Name*@
+    Name: @Model.Name
+</div>
+        
+<div>
+    @*Email: @ViewBag.Employee.Email*@
+    Email: @Model.Email
+</div>
+
+<div>
+    @*Department: @ViewBag.Employee.Department*@
+    Department: @Model.Department
+</div>
+
+@section Scripts {
+    <script src="~/js/CustomScript.js"></script>
+}
+

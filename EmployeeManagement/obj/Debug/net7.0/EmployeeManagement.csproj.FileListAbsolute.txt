@@ -24,3 +24,5 @@ C:\Projects\EmployeeManagement\EmployeeManagement\obj\Debug\net7.0\EmployeeManag
 C:\Projects\EmployeeManagement\EmployeeManagement\obj\Debug\net7.0\EmployeeManagement.genruntimeconfig.cache
 C:\Projects\EmployeeManagement\EmployeeManagement\obj\Debug\net7.0\ref\EmployeeManagement.dll
 C:\Projects\EmployeeManagement\EmployeeManagement\bin\Debug\net7.0\EmployeeManagement.staticwebassets.runtime.json
+C:\Projects\EmployeeManagement\EmployeeManagement\obj\Debug\net7.0\EmployeeManagement.RazorAssemblyInfo.cache
+C:\Projects\EmployeeManagement\EmployeeManagement\obj\Debug\net7.0\EmployeeManagement.RazorAssemblyInfo.cs

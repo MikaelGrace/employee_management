@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "liodJY6o8E2q1IBGyoBHppAWcOD8sxCvN1swL+i9Y3Q=",
+  "Hash": "Ppp+GTG0ULYq1J0OnqQVPTp1oO4uLiFbNwZLym+jqVg=",
   "Source": "EmployeeManagement",
   "BasePath": "_content/EmployeeManagement",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\foo.html"
+    },
+    {
+      "Identity": "C:\\Projects\\EmployeeManagement\\EmployeeManagement\\wwwroot\\js\\CustomScript.js",
+      "SourceId": "EmployeeManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\EmployeeManagement\\EmployeeManagement\\wwwroot\\",
+      "BasePath": "_content/EmployeeManagement",
+      "RelativePath": "js/CustomScript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\CustomScript.js"
     }
   ]
 }

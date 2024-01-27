@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 var builder = WebApplication.CreateBuilder(args);
 //the addmvc services has to be called before the application build
 //variable is created, otherwise it throws an error
-builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
+builder.Services.AddMvc(options => options.EnableEndpointRouting = false).AddXmlSerializerFormatters();
 //this is to register the implementation of the IemployeeRepository
 //This is to ensure that the request from the homeController is duly served
 //currently the only implementation is mockEployeeRepository
@@ -33,12 +33,17 @@ else if (env.IsStaging() || env.IsProduction() || env.IsEnvironment("UAT"))
 FileServerOptions fileServerOptions = new FileServerOptions();
 fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
 fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
-app.UseFileServer(fileServerOptions); // to reder a default html file
-app.UseStaticFiles();
+//app.UseFileServer(fileServerOptions); // to reder a default html file
+//app.UseStaticFiles();
 
 
 //using MVC
-app.UseMvcWithDefaultRoute();
+//the method useMvcWithDefaultRoute brings in mvc support and configures a default route
+//for the application request processing pipeline
+//app.UseMvcWithDefaultRoute();
+
+//the method useMvc only provides Mvc support so we would need to explicitly specify the route
+app.UseMvc(routes => routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}"));
 
 //reading the config settings value in appsettings.json
 //app.MapGet("/", () => config["MyKey"]);
@@ -52,6 +57,6 @@ app.UseMvcWithDefaultRoute();
 
 
 
-app.MapGet("/", () => "Hello World!");
+//app.MapGet("/", () => "Hello World!");
 
 app.Run();
