@@ -48,9 +48,9 @@ namespace EmployeeManagement.Controllers
         }*/
 
         //using view
-        public ViewResult Details(int id)
+        public ViewResult Details(int? id)
         {
-            Employee model = _employeeRepository.GetEmployee(id);
+            Employee model = _employeeRepository.GetEmployee(id??1);
             //with viewdata, we use string keys, with view bag, we use dynamic properties
             //ViewData["Employee"] = model;
             //ViewData["Page Title"] = "Employee Details";
