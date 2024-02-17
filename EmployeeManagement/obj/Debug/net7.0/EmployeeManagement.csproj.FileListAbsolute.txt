@@ -26,3 +26,4 @@ C:\Projects\EmployeeManagement\EmployeeManagement\obj\Debug\net7.0\ref\EmployeeM
 C:\Projects\EmployeeManagement\EmployeeManagement\bin\Debug\net7.0\EmployeeManagement.staticwebassets.runtime.json
 C:\Projects\EmployeeManagement\EmployeeManagement\obj\Debug\net7.0\EmployeeManagement.RazorAssemblyInfo.cache
 C:\Projects\EmployeeManagement\EmployeeManagement\obj\Debug\net7.0\EmployeeManagement.RazorAssemblyInfo.cs
+C:\Projects\EmployeeManagement\EmployeeManagement\bin\Debug\net7.0\libman.json

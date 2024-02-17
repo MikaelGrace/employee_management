@@ -34,7 +34,7 @@ FileServerOptions fileServerOptions = new FileServerOptions();
 fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
 fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
 //app.UseFileServer(fileServerOptions); // to reder a default html file
-//app.UseStaticFiles();
+app.UseStaticFiles();
 
 
 //using MVC
