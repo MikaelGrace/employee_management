@@ -58,5 +58,22 @@ namespace EmployeeManagement.Controllers
             ViewBag.PageTitle = "Employee Details";
             return View(model);
         }
+        [HttpGet]
+        public ViewResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Employee employee)
+        {
+            if(ModelState.IsValid)
+            {
+                Employee newEmployee = _employeeRepository.Add(employee);
+                return RedirectToAction("details", new { id = newEmployee.Id });
+            }
+
+            return View();
+            
+        }
     }
 }
