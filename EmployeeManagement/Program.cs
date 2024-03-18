@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using EmployeeManagement.Models;
 using System.Runtime.CompilerServices;
 
@@ -8,13 +9,20 @@ builder.Services.AddMvc(options => options.EnableEndpointRouting = false).AddXml
 //this is to register the implementation of the IemployeeRepository
 //This is to ensure that the request from the homeController is duly served
 //currently the only implementation is mockEployeeRepository
-builder.Services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
+//builder.Services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
+builder.Services.AddScoped<IEmployeeRepository, SQLEmployeeRepository>();
+
 var app = builder.Build();
 var process = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
 var env = app.Environment;
 
 //creating the configuration settings value present in appsettings.json
 IConfiguration config = app.Configuration;
+
+//the adddbcontextpool helps to choose a database to use
+builder.Services.AddDbContextPool<AppDbContext>(
+    options => options.UseSqlServer(config.GetConnectionString("EmployeeDBConnection")));
+
 
 if (env.IsDevelopment())
 {
